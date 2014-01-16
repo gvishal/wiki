@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Wiki!</title>
+</head>
+	<style type='text/css'>
+		#title {
+			font-size: 30px;
+			text-align: center;
+			color: #000;
+		}
+
+		body {
+		    position: relative;
+		    font-family: Helvetica, Arial, sans-serif;
+		    font-size: 14px;
+
+		    width: 800px;
+		    margin: 0 auto;
+		    padding: 10px;
+		    color: #333;
+		}
+
+		div a {
+			text-decoration: none;
+		}
+
+		.page + .page {
+			margin-top: 20px;
+		}
+
+		.created {
+			position: relative;
+		}
+
+		.content {
+			top: 5px;
+		}
+
+		.view {
+			position: relative;
+		}
+
+		.edit{
+			position: absolute;
+			right: 0px;
+		}
+	</style>
+<body>
+	<a href="/_edit{{pName}}">Edit</a>
+	<a href="/_history{{pName}}">History</a>
+	<div class="history">
+		{% if history %}
+		{% for h in history %}
+			<div class='page'>
+				<div class='created'>{{h.created.strftime("%b %d, %Y")}}</div>
+				<div class='content'>{{h.content}}</div>
+				<div class='view'><a href="{{pName}}">View</a>
+				<div class='edit'><a href="/_edit{{pName}}">Edit</a>
+			</div>
+		{% endfor %}
+		{% endif %}
+	</div>
+</body> 
+</html>

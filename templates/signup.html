@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>SignUp!</title>
+</head>
+
+<body>
+	<h1>Signup</h1>
+	<form method="post">
+	<label>Name:<input name="username" value="{{username}}"></label><div style="color : red">{{username_error}}</div><br>
+	<label>Password:<input type="password" name="password"></label><br><div style="color : red">{{password_error}}</div><br>
+	<label>Verify Password:<input type="password" name="verify"></label><div style="color : red">{{verify_error}}</div><br>
+	<label>Email(Optional):<input name="email" value="{{email}}"></label><div style="color : red">{{email_error}}</div><br>
+	<input type="submit">
+</form>
+</body>

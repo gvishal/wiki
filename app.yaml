@@ -1,0 +1,23 @@
+application: unotrill
+inbound_services:
+- warmup
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+# Other settings here...
+# instance_class: F4_1G
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /stylesheets
+  static_dir: templates/css
+
+- url: /.*
+  script: wiki.application
+
+libraries:
+- name: jinja2
+  version: latest
